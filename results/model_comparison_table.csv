@@ -1,0 +1,4 @@
+hidden_layers,neurons,learning_rate,batch_size,epochs,activation,Test_Accuracy
+1,16,0.01,32,30,relu,0.98
+2,64,0.001,64,50,relu,0.98
+3,32,0.001,32,80,tanh,0.9725
