@@ -16,8 +16,8 @@ The learning rate dictates the step size taken during gradient descent. If the l
 Customer churn datasets are inherently imbalanced (the vast majority of customers are retained). In early testing, the model achieved 98% accuracy by simply overfitting to the majority class, resulting in a Recall of 0.0 for actual churners. 
 
 To correct this, I introduced balanced **Class Weights** and **Dropout layers**. The results perfectly illustrated the Accuracy/Recall trade-off:
-* **Experiment 1 (1 Layer, 32 Neurons, ReLU):** Achieved a much stronger Recall of ~42.8%, successfully identifying potential churners. The overall accuracy dropped to 74% as the model accepted more false positives to catch the minority class.
-* **Experiment 2 (2 Layers, 64 Neurons, Heavier Dropout):** Reverted to majority-class prediction (Recall 0.0, Accuracy 95.5%), indicating that the model underfit the minority class due to excessive dropout combined with early stopping. 
+* **Experiment 1 (2 Layers, 64 Neurons, Heavier Dropout):** Reverted to majority-class prediction (Recall 0.0, Accuracy 95.5%), indicating that the model underfit the minority class due to excessive dropout combined with early stopping. 
+* **Experiment 2 (1 Layer, 32 Neurons, ReLU):** Achieved a much stronger Recall of ~42.8%, successfully identifying potential churners. The overall accuracy dropped to 74% as the model accepted more false positives to catch the minority class.
 
 ### Pro-Level Optimization (Experiment 3)
 To push the model to industry standards, I implemented **L2 Regularization**, a dynamic **Learning Rate Scheduler** (`ReduceLROnPlateau`), and evaluated custom decision thresholds. 
